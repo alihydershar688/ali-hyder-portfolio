@@ -1,0 +1,48 @@
+---
+import { ArrowRight, Download } from 'lucide-astro';
+import { site } from '../data/site.js';
+const badgeItems = ['Python', 'Flask', 'JavaScript', 'React', 'PostgreSQL'];
+---
+
+<section id="home" class="hero section">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>{site.name}</h1>
+      <h2 class="hero__role">Software Engineer</h2>
+      <p class="lead">
+        I'm a Software Engineering graduate with hands-on experience building responsive web applications,
+        developing backend APIs, and connecting applications to useful data. I enjoy making everyday tasks simpler with reliable, maintainable software.
+      </p>
+      <div class="hero__actions">
+        <a href="#projects" class="button button--primary">View Projects <ArrowRight size={18} /></a>
+        <a href={site.resumePath} class="button button--ghost" download>
+          <Download size={18} /> Download Resume
+        </a>
+      </div>
+      <div class="tech-badges" aria-label="Core technologies">
+        {badgeItems.map((badge) => <span class="tech-badge">{badge}</span>)}
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-label="Ali Hyder profile and selected work">
+      <div class="hero-preview">
+        <div class="hero-preview__header">
+          <span>Ali Hyder</span>
+          <span>Available for work</span>
+        </div>
+        <img class="hero-preview__portrait" src={`${import.meta.env.BASE_URL}/images/ali-hyder-avatar.png`} alt="Portrait of Ali Hyder" />
+        <div class="hero-preview__meta">
+          <div>
+            <p class="meta-label">Focus</p>
+            <strong>Useful digital products</strong>
+          </div>
+          <div>
+            <p class="meta-label">Stack</p>
+            <strong>Flask · React · PostgreSQL</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

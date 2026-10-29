@@ -1,0 +1,19 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects.js';
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected work focused on real product problems.</h2>
+    </div>
+
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </div>
+</section>

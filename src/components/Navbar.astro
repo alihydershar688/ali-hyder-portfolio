@@ -1,0 +1,74 @@
+---
+import { navItems } from '../data/site.js';
+import { SunMedium, MoonStar, Menu, X, Code2 } from 'lucide-astro';
+---
+
+<nav class="navbar" aria-label="Main navigation">
+  <div class="container navbar__inner">
+    <a class="brand" href="#home" aria-label="Ali Hyder home">
+      <Code2 size={18} aria-hidden="true" />
+      <span>Software Engineer</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+      <span class="sr-only">Open navigation menu</span>
+      <Menu class="nav-toggle__icon nav-toggle__icon--open" size={20} />
+      <X class="nav-toggle__icon nav-toggle__icon--close" size={20} />
+    </button>
+    <div class="nav-panel" id="nav-menu">
+      <ul class="nav-links">
+        {navItems.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <SunMedium class="theme-icon theme-icon--light" size={18} />
+          <MoonStar class="theme-icon theme-icon--dark" size={18} />
+        </button>
+        <a class="button button--primary nav-cta" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navPanel = document.querySelector('.nav-panel');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const themeToggle = document.querySelector('.theme-toggle');
+
+  const setMenuState = (expanded) => {
+    navToggle?.setAttribute('aria-expanded', String(expanded));
+    navPanel?.classList.toggle('is-open', expanded);
+    document.body.classList.toggle('menu-open', expanded);
+  };
+
+  navToggle?.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    setMenuState(!isExpanded);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => setMenuState(false));
+  });
+
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+  };
+
+  const currentTheme = () => document.documentElement.getAttribute('data-theme') || 'dark';
+  themeToggle?.addEventListener('click', () => {
+    applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+  });
+
+  const updateThemeButton = () => {
+    document.documentElement.dataset.theme === 'dark'
+      ? document.body.classList.add('theme-dark')
+      : document.body.classList.remove('theme-dark');
+  };
+
+  document.addEventListener('DOMContentLoaded', updateThemeButton);
+  const observer = new MutationObserver(() => updateThemeButton());
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+</script>

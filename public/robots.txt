@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alihydershar688.github.io/ali-hyder-portfolio/sitemap-index.xml

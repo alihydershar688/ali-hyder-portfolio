@@ -1,0 +1,78 @@
+---
+---
+
+<section id="contact" class="section">
+  <div class="container contact-grid">
+    <div>
+      <div class="section-heading section-heading--left">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's Build Something Useful.</h2>
+      </div>
+      <p class="contact-text">
+        Have a project in mind, need help improving an existing application, or looking for a developer to join your team? I'm open to discussing web applications, backend development, and practical ways to improve a product or workflow.
+      </p>
+    </div>
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <div class="form-row">
+        <label>
+          <span>Name</span>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </label>
+      </div>
+      <div class="form-row form-row--two">
+        <label>
+          <span>Email</span>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          <span>Subject</span>
+          <input type="text" id="subject" name="subject" placeholder="Project inquiry" required />
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Message</span>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </label>
+      </div>
+      <div class="form-row form-row--actions">
+        <button class="button button--primary" type="submit">Submit</button>
+        <p class="form-status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.querySelector('.form-status');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const name = (formData.get('name') || '').toString().trim();
+    const email = (formData.get('email') || '').toString().trim();
+    const subject = (formData.get('subject') || '').toString().trim();
+    const message = (formData.get('message') || '').toString().trim();
+
+    if (!name || !email || !subject || !message) {
+      status.textContent = 'Please complete all fields before submitting.';
+      status.classList.add('is-error');
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.classList.add('is-error');
+      return;
+    }
+
+    const mailtoLink = `mailto:alihydershar688@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    window.location.href = mailtoLink;
+    status.textContent = 'Your email client opened with a pre-filled message.';
+    status.classList.remove('is-error');
+    form.reset();
+  });
+</script>

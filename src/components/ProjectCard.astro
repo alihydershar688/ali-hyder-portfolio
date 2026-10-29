@@ -1,0 +1,38 @@
+---
+import { ArrowUpRight, Github } from 'lucide-astro';
+const { title, description, technologies, features, githubUrl, githubLabel, demoUrl, image } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-card__image-wrap">
+    <img src={image} alt={`${title} preview`} loading="lazy" />
+  </div>
+  <div class="project-card__body">
+    <div class="project-card__meta">
+      <span class="project-card__label">Project</span>
+    </div>
+    <h3>{title}</h3>
+    <p class="project-card__description">{description}</p>
+    <div class="chip-list" aria-label={`Technologies used in ${title}`}>
+      {technologies.map((tech) => <span class="chip">{tech}</span>)}
+    </div>
+    <div class="project-card__details">
+      <h4>Key Features</h4>
+      <ul>
+        {features.map((feature) => <li>{feature}</li>)}
+      </ul>
+    </div>
+    <div class="project-card__actions">
+      {githubUrl && (
+        <a class="button button--secondary" href={githubUrl} target="_blank" rel="noreferrer noopener">
+          <Github size={18} /> {githubLabel || 'View Source Code'}
+        </a>
+      )}
+      {demoUrl && (
+        <a class="button button--primary" href={demoUrl} target="_blank" rel="noreferrer noopener">
+          Live Demo <ArrowUpRight size={18} />
+        </a>
+      )}
+    </div>
+  </div>
+</article>

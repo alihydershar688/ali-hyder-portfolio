@@ -1,0 +1,32 @@
+---
+import { education, certifications } from '../data/education.js';
+---
+
+<section id="education" class="section section--soft">
+  <div class="container education-grid">
+    <div>
+      <div class="section-heading section-heading--left">
+        <p class="eyebrow">Education</p>
+        <h2>Academic foundation and continued learning.</h2>
+      </div>
+      {education.map((item) => (
+        <article class="education-card">
+          <h3>{item.title}</h3>
+          <p class="education-card__department">{item.department}</p>
+          <p class="education-card__institution">{item.institution}</p>
+          <p>{item.location} · {item.period}</p>
+        </article>
+      ))}
+    </div>
+
+    <div>
+      <div class="section-heading section-heading--left">
+        <p class="eyebrow">Certifications</p>
+        <h2>Professional learning milestones.</h2>
+      </div>
+      <ul class="cert-list">
+        {certifications.map((cert) => <li>{cert}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

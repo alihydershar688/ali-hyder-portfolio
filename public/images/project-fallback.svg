@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Project fallback</title>
+  <desc id="desc">A stylized dashboard layout representing a software project preview.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#111f2f"/>
+      <stop offset="100%" stop-color="#182c42"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#7c9cff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1040" height="560" rx="28" fill="#0b1729" stroke="#23395d"/>
+  <rect x="121" y="118" width="220" height="18" rx="9" fill="#1a2d48"/>
+  <rect x="121" y="162" width="180" height="12" rx="6" fill="#1a2d48"/>
+  <rect x="121" y="204" width="300" height="260" rx="18" fill="#0f1f33" stroke="#25416f"/>
+  <rect x="455" y="204" width="600" height="56" rx="16" fill="#132a42"/>
+  <rect x="455" y="286" width="282" height="178" rx="16" fill="#122844"/>
+  <rect x="773" y="286" width="282" height="178" rx="16" fill="#122844"/>
+  <rect x="455" y="490" width="600" height="30" rx="15" fill="#132a42"/>
+  <rect x="760" y="120" width="88" height="34" rx="17" fill="url(#accent)"/>
+  <rect x="866" y="120" width="150" height="34" rx="17" fill="#1b3557"/>
+  <circle cx="210" cy="350" r="70" fill="url(#accent)" opacity="0.18"/>
+  <path d="M175 350l38 38 75-92" stroke="url(#accent)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,0 +1,41 @@
+---
+import { CheckCircle2 } from 'lucide-astro';
+const strengths = [
+  'Full-stack application development.',
+  'Practical problem-solving.',
+  'API and database integration.',
+  'Maintainable code.',
+  'Team collaboration.',
+  'Continuous learning.',
+];
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">About Me</p>
+      <h2>Engineer who builds end-to-end product experiences.</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>
+          I'm a Software Engineering graduate with hands-on experience developing web applications, building responsive user interfaces, integrating backend APIs, and working with relational databases.
+        </p>
+        <p>
+          My experience includes frontend development with React.js and JavaScript, backend development with Python and Flask, and database integration using PostgreSQL and Supabase. I also helped build an online exam platform where teachers can prepare questions and review student answers.
+        </p>
+        <p>
+          Through professional roles and personal projects, I've learned to work with existing codebases, troubleshoot issues, collaborate with developers, and turn requirements into functional software.
+        </p>
+        <p>
+          I enjoy understanding how an application works as a complete system—from its user interface to its backend logic and database.
+        </p>
+      </div>
+      <ul class="strength-list" aria-label="Strengths and areas of focus">
+        {strengths.map((item) => (
+          <li><CheckCircle2 size={18} /> <span>{item}</span></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <main class="page-404">
+    <div class="container small-container">
+      <p class="eyebrow">404</p>
+      <h1>Page not found.</h1>
+      <p>The page you were looking for doesn't exist or has moved.</p>
+      <a href={`${import.meta.env.BASE_URL}/`} class="button button--primary">Return home</a>
+    </div>
+  </main>
+</BaseLayout>

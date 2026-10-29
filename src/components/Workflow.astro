@@ -1,0 +1,32 @@
+---
+import { ClipboardCheck, Route, CodeXml, Bug, Rocket } from 'lucide-astro';
+const steps = [
+  { title: 'Understand requirements', icon: ClipboardCheck },
+  { title: 'Plan the solution', icon: Route },
+  { title: 'Build and integrate', icon: CodeXml },
+  { title: 'Test and troubleshoot', icon: Bug },
+  { title: 'Deploy and improve', icon: Rocket },
+];
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Development Workflow</p>
+      <h2>A process focused on clarity, delivery, and iteration.</h2>
+    </div>
+
+    <div class="workflow-grid">
+      {steps.map((step, index) => {
+        const Icon = step.icon;
+        return (
+          <article class="workflow-card">
+            <div class="workflow-number">0{index + 1}</div>
+            <div class="workflow-icon"><Icon size={20} /></div>
+            <h3>{step.title}</h3>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

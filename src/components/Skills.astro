@@ -1,0 +1,22 @@
+---
+import { skillGroups } from '../data/skills.js';
+---
+
+<section id="skills" class="section section--soft">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Skills</p>
+      <h2>Tools and systems I use to ship software.</h2>
+    </div>
+    <div class="skills-grid">
+      {skillGroups.map((group) => (
+        <article class="skill-card">
+          <h3>{group.title}</h3>
+          <ul>
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

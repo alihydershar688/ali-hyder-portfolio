@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ali Hyder favicon">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#08111f"/>
+  <path d="M18 46V18h9.5c7.2 0 11.5 4.4 11.5 11.3 0 7.2-4.7 11.7-12.3 11.7H18zm8.7-7.5h1.8c3.8 0 6-2.1 6-6.2 0-3.5-2-5.7-5.7-5.7h-2.1v11.9z" fill="url(#bg)"/>
+  <path d="M39 46l7-28h6.2L45.2 46H39z" fill="#e2e8f0"/>
+</svg>
