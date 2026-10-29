@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.BASE_URL;
+import { basePath as baseUrl } from './site.js';
 
 export const projects = [
   {
