@@ -1,3 +1,6 @@
+// Base path without a trailing slash ('' on Netlify, '/ali-hyder-portfolio' on GitHub Pages).
+export const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export const site = {
   name: 'Ali Hyder',
   title: 'Ali Hyder | Software Engineer',
@@ -9,7 +12,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/alihyder110/',
   discordUsername: 'freethinker7430',
   portfolio: 'https://alihydershar688.github.io/ali-hyder-portfolio/',
-  resumePath: '/ali-hyder-portfolio/resume/Ali-Hyder-Resume.pdf',
+  resumePath: `${basePath}/resume/Ali-Hyder-Resume.pdf`,
   resumeLabel: 'Download Resume',
 };
 
